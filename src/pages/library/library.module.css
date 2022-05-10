@@ -1,0 +1,38 @@
+.main-library-container {
+    background-color: rgba(252, 242, 233, 1);
+}
+
+.lib-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lib-header p {
+    font-size: 48px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+
+#start-project {
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    position: fixed;
+    right: 1%;
+    top: 90%;
+    border-radius: 6px;
+    background: rgba(178, 65, 69, 1);
+    padding: 15px 22px;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+
+.top-img {
+    width: 100%;
+}
+
+

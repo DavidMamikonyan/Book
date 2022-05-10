@@ -1,0 +1,93 @@
+.main-signup {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(252, 242, 233, 1);
+}
+
+
+.sign-up-input-container {
+    display: grid;
+    grid-gap: 25px;
+    margin-bottom: 18px;
+}
+.banner-img-cont {
+    max-width: 856px;
+
+}
+
+.banner-img-cont img {
+    width: 100%;
+}
+
+.sign-up-form {
+    padding: 15px;
+    max-width: 560px;
+    height: 100%;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    height: calc(2.25rem + 14px);
+}
+
+.social_reg .w-100{
+    padding: 10px 0;
+}
+
+.text-green {
+    color: #00A591;
+}
+
+.sign-label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #19032B;
+}
+
+
+.or-signUp {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(147, 147, 147, 1);
+    line-height: 0.1em;
+    margin: 70px 0 !important;
+}
+
+.or-signUp span {
+    color: rgba(147, 147, 147, 1);
+    background: rgba(252, 242, 233, 1);
+    padding: 0 10px;
+}
+
+.social_reg {
+    width: 100%;
+}
+
+.btn-container {
+    margin-top: 48px;
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .sign-up-form {
+        padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width:950px) {
+    .registration-banner {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .sign-up-form {
+        margin: 0 auto;
+    }
+}

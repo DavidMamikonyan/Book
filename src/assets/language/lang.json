@@ -1,0 +1,24 @@
+{
+  "createBookEng": {
+    "pageTitle": "Champion a book production",
+    "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "bookName": "Book name",
+    "author": "Author",
+    "year": "Year of production",
+    "ISBN": "ISBN",
+    "pledge": "Your kickoff pledge",
+    "pledgeInfo": "That it should be $100 or more",
+    "btnText": "send a request"
+  },
+  "createBookArabic": {
+    "pageTitle": "أطلق مشروع إنتاج كتاب صوتي",
+    "info": "يرجى إدخال معلومات الكتاب الذي تود إطلاق مشروع إنتاجه صوتياً. سوف يقوم أحد أعضاء فريقنا بدراسة الطلب وتحصيل الموافقات المطلوبة. في حال عدم تحصيل الموافقة فلك الحق باستراجاع كامل المبلغ أو تخصيصه لمشروع آخر تمت الموافقة عليه.",
+    "bookName": "عنوان الكتاب",
+    "author": "الكاتب",
+    "year": "سنة النشر",
+    "ISBN": "ISBN  الرقم الدولي المعياري للكتاب",
+    "pledge": "المبلغ الذي سوف تلتزم به من أجل تمويل إنتاج الكتاب",
+    "pledgeInfo": "يجب أن يكون المبلغ 100$ أو أكثر",
+    "btnText": "أرسل طلب إطلاق المشروع"
+  }
+}

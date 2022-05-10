@@ -1,0 +1,49 @@
+.main-footer {
+    background: rgba(170, 187, 93, 1);
+    margin-top: auto;
+
+}
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    line-height: 60px;
+    justify-content: space-between;
+    max-width: 1500px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    color: white;
+}
+
+.first a {
+    color: white;
+    margin-left: 8px;
+}
+
+.line {
+    margin-bottom: 1.22rem;
+    border-bottom: 1px solid white;
+}
+
+.last p {
+    margin-left: 8px;
+}
+
+.inst {
+    margin: 0 25px;
+}
+
+.foot-end {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.last div {
+    display: flex;
+}
