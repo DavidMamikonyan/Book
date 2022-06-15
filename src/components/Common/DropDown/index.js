@@ -6,7 +6,6 @@ import arrowDownTwo from './../../../assets/images/arrowDownTwo.png';
 export default (props) => {
 
 
-    // properties - onValueChange(), data, style
     const [dropMenuIsOpen, setDropMenuIsOpen] = useState(false);
     const [filedTitle, setFiledTitle] = useState('');
 
@@ -48,7 +47,7 @@ export default (props) => {
     return (
         <div className={styles['main-container']}>
             {props.title && <span className={styles['title']}>{props.title}</span>}
-            <div className={styles[dropdown]}>
+            <div className={styles[dropdown]} dir='ltr'>
                 <div
                     className={`${props.style || styles[ddContainer]}`}
                     onClick={dropMenuChangeHandler}
@@ -60,26 +59,4 @@ export default (props) => {
             </div>
         </div>
     )
-}
-
-
-{/*{props.content.img1 && <div className={styles['switch-icons']}>*/
-}
-{/*    <img src={props.content.img1} alt={props.content.img1Alt}/>*/
-}
-{/*    <img src={props.content.switchIcon} alt={props.content.switchAlt}*/
-}
-{/*         className={filedTitle === 'Active' ? styles['status-active'] : styles['status-inactive']}/>*/
-}
-{/*</div>}*/
-}
-{/*{props.content.input ? <input*/
-}
-{/*    placeholder={props.content.placeholder}*/
-}
-{/*    value={filedTitle}*/
-}
-{/*    onChange={(event) => setFiledTitle(event.target.value)}*/
-}
-{/*/> : <span>{filedTitle ? filedTitle : props.content.placeholder}</span>}*/
 }

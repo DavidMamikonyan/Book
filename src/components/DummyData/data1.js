@@ -16,23 +16,99 @@ export const langData = [
         title: 'Eng'
     },
     {
-        title: 'ARabic'
+        title: 'عربي'
     },
 ];
 
 export const howItWorksStepData = [
     {
-        text:'You choose a book in Arabic that you would like to have as an audiobook',
+        text:"step1",
     },
     {
-        text:'Champion the audiobook production by committing $100 or more.',
+        text: "step2",
     },
     {
-        text:'We will crowdfund the rest of the production cost, together!',
+        text: "step3",
     },
     {
-        text: 'You have enriched the Arabic library and created a new audiobook that will last forever and benefit millions!',
+        text: "step4",
     }
+];
+
+
+export const myAccountData = [
+    {
+        title: 'Start new project',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/create-book',
+    },
+    {
+        title: 'My Projects',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/create-book',
+    },
+    {
+        title: 'My aoudibooks',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/create-book',
+    },
+    {
+        title: 'Profile settings',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/profile-settings',
+    },
+    {
+        title: 'Wishlist',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/create-book',
+    },
+    {
+        title: 'Help center',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        url:'/create-book',
+    },
+
+];
+
+export const ddItemsUser = [
+    {
+        title: 'start',
+        url:'/create-book',
+    },
+    {
+        title: 'projects',
+        url:'/my-account',
+    },
+    {
+        title: 'audioBooks',
+        url:'/library',
+    },
+    {
+        title: 'settings',
+        url:'profile-settings',
+    },
+    {
+        title: 'wishlist',
+        url:'my-account',
+    },
+    {
+        title: 'help',
+        url:'my-account',
+    },
+    {
+        title: 'out',
+        url:'/',
+    },
+
+];
+
+export const checkboxData = [
+    {
+        text: 'male',
+    },
+    {
+        text: 'female',
+    },
 ];
 
 

@@ -7,24 +7,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding: 42px 240px 60px 0;
-    /*padding-top: 21.04167%; !* (img-height / img-width * container-width) (404 / 1920 * 100) *!*/
-
-
 }
-
 
 .top-area > img {
     max-width: 640px;
     display: block;
     margin-left: auto;
 }
-
-
 .about-us-text {
-    max-inline-size: 1250px;
+    max-inline-size: 1550px;
     font-family: PoppinsRegular, sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 40px;
     color: rgba(100, 100, 100, 1);
     margin: 42px auto 200px;
     text-align: center;

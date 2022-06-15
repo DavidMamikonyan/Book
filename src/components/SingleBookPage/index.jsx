@@ -1,22 +1,25 @@
 import React from 'react'
 import styles from './singleBookPage.module.css';
 import {useLocation} from "react-router-dom";
-import Pledged from './PledgedUsers';
+import PledgedUsers from './PledgedUsers';
 import ListenRead from './ListenRead';
 import PledgeInfo from './PledgeInfo';
+import {useTranslation} from "react-i18next";
 
 
 export default () => {
 
     const location = useLocation();
     const book = location.state.selectedBook;
+    const {t, i18n} = useTranslation();
+    console.log(book);
 
     return (
-        <div className={styles['main-container']}>
+        <div className={styles['main-container']} dir={i18n.dir()}>
             <div className={styles['top-area']}>
                 <div className={styles['container']}>
                     <div className={styles['page-dir']}>
-                        <span>{book.type} /</span>
+                        <span>{t(`bookList.${book.type}Title`)} /</span>
                         <span>{book.name}</span>
                     </div>
                     <section className={styles['book-info-section']}>
@@ -25,22 +28,22 @@ export default () => {
                             <div>
                                 <span className={styles['book-name']}>{book.name}</span>
                                 <div className={styles['author-container']}>
-                                    <span>Author</span>
+                                    <span>{t('singleBook.author')}</span>
                                     <span>{book.author}</span>
                                 </div>
                             </div>
                             <p className={styles['description']}>{book.description}</p>
                             <div className={styles['info-details']}>
                                 {book.narrator && <div>
-                                    <span>Narrator</span>
+                                    <span>{t('singleBook.narrator')}</span>
                                     <span>{book.narrator}</span>
                                 </div>}
                                 {book.genre && <div>
-                                    <span>Genre</span>
+                                    <span>{t('singleBook.genre')}</span>
                                     <span>{book.genre}</span>
                                 </div>}
                                 {book.publicYear && <div>
-                                    <span>Year of publication</span>
+                                    <span>{t('singleBook.publicYear')}</span>
                                     <span>{book.publicYear}</span>
                                 </div>}
                             </div>
@@ -59,7 +62,7 @@ export default () => {
                 <div className={styles['container']}>
                     <section className={styles['pledge-book-section']}>
                         <div>
-                            <Pledged data={book.pledgedData}/>
+                            <PledgedUsers data={book.pledgedData}/>
                         </div>
                     </section>
                 </div>

@@ -6,6 +6,7 @@ import Card from "./Card";
 import Input from './../../../Common/UI/Input';
 import Button from './../../../Common/UI/Button';
 import {useNavigate} from "react-router-dom";
+import useInput from "../../../../hooks/use-input";
 
 
 export default (props) => {
@@ -13,8 +14,34 @@ export default (props) => {
     const [selectedCard, setSelectedCard] = useState(true);
     const navigate = useNavigate();
 
+    const {
+        // value: amountValue,
+        isValid: amountIsValid,
+        hasError: amountHasError,
+        valueChangeHandler: amountChangeHandler,
+        inputBlurHandler: amountBlurHandler,
+        reset: amountReset,
+    } = useInput((val) => val >= 100 );
+
+    let formIsValid = false;
+
+    if (amountIsValid) {
+        formIsValid = true;
+    }
+
+
     const cardDetailsOpenHandler = () => {
         navigate('/card-details');
+    };
+
+    const submitHandler = (evt) => {
+        evt.preventDefault();
+
+        if(!formIsValid) {
+            return;
+        }
+
+        amountReset();
     }
 
 
@@ -22,7 +49,7 @@ export default (props) => {
         <>
             <div className={styles['backdrop']} onClick={props.popUpHandler}/>
             <div className={styles['main-container']}>
-                <img src={closeIcon} alt='close icon' className={styles['close-icon']}/>
+                <img src={closeIcon} alt='close icon' className={styles['close-icon']} onClick={props.popUpHandler}/>
                 <div className={styles['name-container']}>
                     <span>pledge for this book</span>
                     <span>{props.data.name}</span>
@@ -44,21 +71,21 @@ export default (props) => {
                     </div>
                     <ProgressBarLine progress={props.data.donated / props.data.goal * 100}/>
                 </div>
-                <form className={styles['form']}>
+                <form className={styles['form']} onSubmit={(evt) => submitHandler(evt)}>
                     <Input
                         label='Amount'
-                        // hasError={passwordHasError}
-                        // errorMessage='Password is incorrect.'
+                        hasError={amountHasError}
+                        errorMessage='Amount must be 100$ or more.'
                         input={{
                             placeholder:'$',
                             id: 'amount',
-                            // onChange: passwordChangeHandler,
-                            // onBlur:passwordBlurHandler,
+                            onChange: amountChangeHandler,
+                            onBlur:amountBlurHandler,
                         }}/>
                         <Card cardNumber='4561 **** **56' cardName='Mahtamun Hoque' title='Remembered card' selected={selectedCard}/>
                         <div className={styles['line']}/>
                         <Card selected={!selectedCard} onClick={cardDetailsOpenHandler}/>
-                        <Button type='primary' disabled={true}>Pledge for this book</Button>
+                        <Button type='primary' disabled={!formIsValid}>Pledge for this book</Button>
                 </form>
             </div>
         </>

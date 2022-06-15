@@ -1,104 +1,42 @@
-
 .step-box {
-    max-width: 363px;
-    width: 100%;
-    max-height: 250px;
+    max-width: 370px;
 }
 
 .border-area {
     position: relative;
-    max-width: 332px;
-    width: 100%;
-    padding: 20px;
 }
 
-
 .step {
-    background-color: rgba(255, 251, 246, 1);
+    text-align: center;
+    min-height: 255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-style {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.rtl {
+    transform: rotate(180deg);
+}
+
+.text-ltr {
+    margin-right: 34px;
+}
+
+.text-rtl {
+    margin-left: 34px;
+}
+
+.text {
     font-size: 18px;
     line-height: 27px;
     font-family: PoppinsMedium, sans-serif;
     color: rgba(100, 100, 100, 1);
-    max-width: 293px;
-    border-radius: 8px;
-    padding: 22px;
-    position: relative;
-    text-align: center;
-    min-height: 210px;
-    display: flex;
-    align-items: center;
-}
-
-.border-top-solid:before,
-.border-top-dashed:before {
-    content: "";
+    max-inline-size: 249px;
     position: absolute;
-    left: 0;
-    top: 0;
-    /*max-height: 120px;*/
-    height: 50%;
-    border: 3px solid rgba(178, 65, 69, 1);
-    border-bottom: none;
-    width: 100%;
-    border-radius: 12px 12px 0 0;
-}
-
-.border-top-dashed:before {
-    border: 3px dashed rgba(178, 65, 69, 1);
-    border-bottom: none;
-}
-
-
-.border-top-solid:after,
-.border-top-dashed:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    /*max-height: 128px;*/
-    height: 50%;
-    border: 3px dashed rgba(178, 65, 69, 1);
-    border-top: none;
-    width: 100%;
-    border-radius: 0 0 12px 12px;
-}
-
-.border-top-dashed:after {
-    border: 3px solid rgba(178, 65, 69, 1);
-    border-top: none;
-}
-
-
-.arrow-box-bottom,
-.arrow-box-top {
-    position: absolute;
-    width: 18px;
-    height: 120px;
-    top: 8px;
-    right: -15px;
-    border-bottom: 3px solid rgba(178, 65, 69, 1);
-    border-left: 3px solid rgba(178, 65, 69, 1);
-    border-radius: 0 0 0 12px;
-}
-
-.arrow-box-top {
-    border-bottom: none;
-    border-top: 3px solid rgba(178, 65, 69, 1);
-    bottom: 8px;
-    border-radius: 12px 0 0 0;
-    top: unset;
-
-}
-
-.arrow-box-bottom > img ,
-.arrow-box-top > img
-{
-    max-width: 18px;
-    position: absolute;
-    bottom: -13px;
-    right: -15px;
-}
-
-.arrow-box-top > img {
-    top:-13px;
 }

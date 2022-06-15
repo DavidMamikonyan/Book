@@ -1,7 +1,13 @@
 import React from "react";
 import styles from './button.module.css';
+import {useNavigate} from "react-router-dom";
+
 
 export default (props) => {
+
+
+
+    const navigate = useNavigate();
 
     let buttonStyle = 'default-style';
     let type = 'button';
@@ -17,15 +23,19 @@ export default (props) => {
         case 'link' :
             buttonStyle = 'link-button';
             break;
-
+        case 'cancel' :
+            buttonStyle = 'cancel-button';
+            break;
     }
 
 
     return (
         <button
+            onClick={() => props.url && navigate(props.url)}
             {...props}
             type={type}
             className={styles[buttonStyle]}
+
 
         >
             {props.children}

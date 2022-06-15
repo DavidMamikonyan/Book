@@ -1,15 +1,17 @@
 import React from "react";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import "./signUp.css";
-import SignUpImg from '../../../assets/images/SignUp.png';
 import Google from "../../../assets/images/icons/google.png";
 import Facebook from "../../../assets/images/icons/facebook.png";
 import registerBanner from '../../../assets/images/registration-banner.png';
 import Input from "../../../components/Common/UI/Input";
 import Button from "../../../components/Common/UI/Button";
+import PageTitle from "../../../components/Common/PageTitle";
 import useInput from "../../../hooks/use-input";
 import useValidation from "../../../hooks/use-validation";
 import useHttp from "../../../hooks/use-http";
+import {useTranslation} from "react-i18next";
+
 
 const SignUp = () => {
 
@@ -17,6 +19,7 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const {error, sendRequest: sendUserData} = useHttp();
+    const {t, i18n} = useTranslation();
 
     const {
         value: emailValue,
@@ -58,20 +61,21 @@ const SignUp = () => {
     };
 
     const submitHandler = (event) => {
+        console.log(56545)
         event.preventDefault();
-        // navigate('/email-verify', {
-        //     state: {
-        //         ...location.state,
-        //         emailToVerify:emailValue,
-        //     }
-        // });
+        navigate('/email-verify', {
+            state: {
+                ...location.state,
+                emailToVerify: emailValue,
+            }
+        });
         if (!formIsValid) {
             return
         }
 
         sendUserData({
             method: 'POST',
-            url: 'https://app-2913.herokuapp.com/users',
+            url: 'http://34.229.195.200:3000/users',
             data: {
                 "email": emailValue,
                 "password": passwordValue,
@@ -82,7 +86,6 @@ const SignUp = () => {
         passwordReset();
         reTypePasswordReset();
 
-
     };
 
     return (
@@ -91,79 +94,76 @@ const SignUp = () => {
                 <img src={registerBanner} className="registration-banner" alt="reg"/>
             </div>
             <div className="sign-up-form row">
-                <img src={SignUpImg} className="img-fluid m-auto" alt=""/>
-                <form className="w-100" onSubmit={evt => submitHandler(evt)}>
+                <PageTitle text={t('common.signUp')}/>
+                <form className="w-100" onSubmit={evt => submitHandler(evt)} dir={i18n.dir()}>
                     <div className='sign-up-input-container'>
                         <Input
-                            label='Email'
+                            label={t('common.email')}
                             hasError={emailHasError}
                             errorMessage='Email address is invalid.'
                             input={{
                                 id: 'email-phone',
                                 type: 'email',
+                                value: emailValue,
                                 onChange: emailChangeHandler,
                                 onBlur: emailBlurHandler,
                             }}
                         />
                         <Input
-                            label='Password'
+                            label={t('common.password')}
                             hasError={passwordHasError}
-                            errorMessage='Password is incorrect.'
+                            errorMessage='Password must be 8 characters or more, have upper and lower case letters, numbers, and special characters.'
                             input={{
                                 id: 'password',
                                 type: 'password',
+                                value: passwordValue,
                                 onChange: passwordChangeHandler,
                                 onBlur: passwordBlurHandler,
                             }}
                         />
                         <Input
-                            label='Confirm password'
+                            label={t('signUp.confirmPass')}
                             hasError={reTypePasswordHasError}
                             isMatch={passwordsIsMatch}
                             isTouched={reTypePasswordIsTouched}
-                            errorMessage='Password is incorrect.'
+                            errorMessage='Password must be 8 characters or more, have upper and lower case letters, numbers, and special characters.'
                             input={{
                                 id: 'confirm-password',
                                 type: 'password',
+                                value: reTypePasswordValue,
                                 onChange: reTypePasswordChangeHandler,
                                 onBlur: reTypePasswordBlurHandler,
                             }}
                         />
                     </div>
-                    <div className="form-check">
+                    <div className="form-check-signUp">
                         <input type="checkbox" className="form-check-input" id="check"/>
                         <label className="form-check-label" htmlFor="check">
-                            I read and agree to
+                            {t('signUp.readAgree')}
                             <span className="text-green">
-                                Terms & Conditions
+                                {t('signUp.terms')}
                             </span>
                         </label>
                     </div>
                     <div className={'btn-container'}>
-                        <Button type="primary">Sign up</Button>
+                        <Button disabled={!formIsValid} type="primary">{t('common.signUp')}</Button>
                     </div>
                 </form>
                 <p className="or-signUp">
-                    <span>
-                        Or
-                    </span>
+                    <span>{t('common.or')}</span>
                 </p>
                 <div className="social_reg">
                     <button className="btn mb-2 w-100">
                         <img src={Google} alt="Google"/>
-                        <span className="ml-2">
-                            With Google Account
-                        </span>
+                        <span className="ml-2">{t('common.wGoogle')} </span>
                     </button>
                     <button className="btn mb-2 w-100">
                         <img src={Facebook} alt="Facebook"/>
-                        <span className="ml-2">
-                            With Facebook
-                        </span>
+                        <span className="ml-2">{t('common.wFacebook')}</span>
                     </button>
                 </div>
                 <div className="col-12 text-center">
-                    <p>Already have an account? <Link to={'/sign-in'}>SIGN IN</Link></p>
+                    <p>{t('signUp.haveAccount')}<Link to={'/sign-in'}>{t('common.signIn')}</Link></p>
                 </div>
             </div>
         </div>

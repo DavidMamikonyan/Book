@@ -1,25 +1,38 @@
 import React from "react";
 import styles from './singleStep.module.css';
-import arrowRight from "../../../assets/images/arrowRight.png";
+import stepImg from "../../../assets/images/howItworks/leftToRight.png";
+import stepImg1 from "../../../assets/images/howItworks/leftToRight1.png";
+import stepImg2 from "../../../assets/images/howItworks/leftToRight2.png";
+import {useTranslation} from "react-i18next";
 
 export default (props) => {
 
-    let stepBordersArea = 'border-top-solid';
-    let arrowBox = 'arrow-box-bottom';
+    const {t, i18n} = useTranslation();
 
-    if (props.index % 2 !== 0) {
-        stepBordersArea = 'border-top-dashed';
-        arrowBox = 'arrow-box-top';
+    let stepImage = '';
+    let rtlImgStyle = '';
+    let textStyle = '';
+
+    if (props.index === 3) {
+        stepImage = stepImg;
+    } else if (props.index % 2 === 0) {
+        stepImage = stepImg1;
+        textStyle = styles['text-ltr'];
+        i18n.dir() === "rtl" && (rtlImgStyle = styles['rtl']) && (textStyle = styles['text-rtl']);
+    } else {
+        stepImage = stepImg2;
+        textStyle = styles['text-ltr'];
+        i18n.dir() === "rtl" && (rtlImgStyle = styles['rtl']) && (textStyle = styles['text-rtl']);
     }
 
 
     return (
         <div className={styles['step-box']}>
-            <div className={`${styles['border-area']} ${styles[stepBordersArea]}`}>
-                <div className={styles['step']}>{props.data.text}</div>
-                {props.index !== 3 && <div className={styles[arrowBox]}>
-                    <img src={arrowRight} alt='arrow right' />
-                </div>}
+            <div className={styles['border-area']}>
+                <div className={styles['step']}>
+                    <img src={stepImage} className={`${styles['img-style']} ${rtlImgStyle}`}/>
+                    <p className={`${styles['text']} ${textStyle}`}>{t(`howItWorksPage.${props.data.text}`)}</p>
+                </div>
             </div>
         </div>
     )

@@ -5,18 +5,21 @@ import Input from "../../components/Common/UI/Input";
 import Button from "../../components/Common/UI/Button";
 import DropDown from "../../components/Common/DropDown";
 import {prodStatus} from "../../components/DummyData";
+import {useTranslation} from "react-i18next";
 
 export default () => {
+
+    const {t, i18n} = useTranslation();
 
 
 
     return (
-        <div className={styles['main-container']}>
+        <div className={styles['main-container']} dir={i18n.dir()}>
             <div className={styles['container']}>
-                <PageTitle text='Contact us'/>
+                <PageTitle text={t('contactUs.title')}/>
                 <form className={styles['from']}>
                     <Input
-                        label='Name'
+                        label={t('common.name')}
                         // hasError={emailHasError}
                         // errorMessage='Email address is invalid.'
                         input={{
@@ -26,7 +29,7 @@ export default () => {
                             // onBlur:emailBlurHandler,
                         }}/>
                     <Input
-                        label='Email'
+                        label={t('common.email')}
                         // hasError={emailHasError}
                         // errorMessage='Email address is invalid.'
                         input={{
@@ -36,13 +39,14 @@ export default () => {
                             // onBlur:emailBlurHandler,
                         }}/>
                     <DropDown
-                        title='Inquiry'
+                        title={t('contactUs.inquiry')}
                         type='sample-one'
                         data={{
                         dropMenuItems: prodStatus,
+
                     }}/>
                     <Input
-                        label='Message'
+                        label={t('contactUs.message')}
                         type='textarea'
                         // hasError={emailHasError}
                         // errorMessage='Email address is invalid.'
@@ -53,7 +57,7 @@ export default () => {
                             // onBlur:emailBlurHandler,
                         }}/>
                         <div className={styles['btn-container']}>
-                            <Button type='primary'>Submit</Button>
+                            <Button type='primary'>{t('contactUs.submit')}</Button>
                         </div>
                 </form>
             </div>

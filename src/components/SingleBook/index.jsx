@@ -5,6 +5,7 @@ import SB_Library from './SB_Library';
 import SB_Production from './SB_Production';
 import SB_Projects from './SB_Projects';
 import PlayOrPauseAudio from '../playOrPauseAudio/index';
+import {useTranslation} from "react-i18next";
 
 const SingleBookComponent = (props) => {
 
@@ -26,7 +27,8 @@ const SingleBookComponent = (props) => {
         playAudio,
     } = props
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const {t, i18n} = useTranslation();
 
     const bookPageOpenHandler = () => {
         if (type !== 'production' && type) {
@@ -40,13 +42,13 @@ const SingleBookComponent = (props) => {
 
 
     return (
-        <div className={styles['single-book']}>
+        <div className={styles['single-book']} dir={i18n.dir()}>
             <div className={styles['img-container']} onClick={bookPageOpenHandler}>
                 <img src={imageext} alt="book"/>
             </div>
             <div className={styles['hr']}/>
             {author &&
-            <p className={styles['author']}>Author
+            <p className={styles['author']}>{t('singleBook.author')}
                 <span className={styles['author-name']}>{author}</span>
             </p>}
             <span className={styles['book-name']}>{name}</span>

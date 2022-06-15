@@ -12,6 +12,7 @@ let count = 300
 let count2 = 999
 let count3 = 600
 
+
 export const data = [
     {
         id: count++,
@@ -499,24 +500,24 @@ export const fundData = [
     {
         id: count2++,
         src: fundPaper,
-        description: 'Sign Up'
+        jsonKey: 'signUp'
     },
     {
         id: count2++,
         src: fundBooks,
-        description: 'Choose / Upload a book'
+        jsonKey: 'startProject'
     },
     {
         id: count2++,
         src: fundDonate,
-        description: 'Donate for it'
+        jsonKey: 'pledge'
     },
     {
         id: count2++,
         src: fundEarphones,
-        description: 'Listen the book'
+        jsonKey: 'enjoy'
     }
-]
+];
 
 export const audioBooks = [
     {
@@ -2428,6 +2429,8 @@ export const productionFilterData = [
         title: "Status",
         placeholder: 'All',
         dd_menu_items: prodStatus,
+        id:"status"
+
 
     }
 ];
@@ -2436,21 +2439,28 @@ export const libraryFilterData = [
         title: "Author",
         placeholder: 'All',
         dd_menu_items: prodStatus,
+        id:"author"
     },
     {
         title: "Narrator",
         placeholder: 'All',
         dd_menu_items: prodStatus,
+        id:"narrator"
+
     },
     {
         title: "Genre",
         placeholder: 'Detective and Mystery',
         dd_menu_items: prodStatus,
+        id:"genre"
+
     },
     {
         title: "Year of publication",
         placeholder: '2022',
         dd_menu_items: prodStatus,
+        id:"publicYear"
+
     },
 
 ];

@@ -1,25 +1,22 @@
 import React from "react";
-import {GlobalContext} from '../../context';
 import FundComponent from '../fund-component';
 import PageTitle from './../Common/PageTitle';
 import styles from './funding.module.css';
+import {useTranslation} from "react-i18next";
+import {fundData} from "../DummyData";
 
 
 const FundingInfo = () => {
-    const {fundData} = GlobalContext();
+
+    const {t} = useTranslation();
 
     return (
         <div className={styles['main-fund']}>
             <div className={styles["fund-head"]}>
                 <div className={styles['page-title-container']}>
-                    <PageTitle text='How to Funding'/>
+                    <PageTitle text={t('howItWorks.title')}/>
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat.
-                </p>
+                <p>{t('howItWorks.description')}</p>
             </div>
             <div className={styles['fund-list']}>
                 {fundData.map(item => <FundComponent key={item.id} {...item}/>)}

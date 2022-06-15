@@ -10,7 +10,7 @@ const Library = () => {
     return (
         <div className={styles['main-library-container']}>
             <img src={libTopImg} alt="lib-text" className={styles['top-img']}/>
-            <PaginatedItems data={libraryBooksData} text={"library"} itemsPerPage={8} type='library' filterData={libraryFilterData}/>
+            <PaginatedItems data={libraryBooksData} itemsPerPage={8} type='library' filterData={libraryFilterData}/>
         </div>
     )
 }

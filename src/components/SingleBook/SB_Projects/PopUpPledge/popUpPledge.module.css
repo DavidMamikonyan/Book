@@ -14,8 +14,6 @@
 
 }
 
-
-
 .backdrop {
     position: fixed;
     top: 0;
@@ -83,7 +81,7 @@
     color: rgba(46, 55, 62, 1);
 }
 
-.even{
+.even {
     font-family: PoppinsRegular, sans-serif;
     font-size: 14px;
     line-height: 21px;

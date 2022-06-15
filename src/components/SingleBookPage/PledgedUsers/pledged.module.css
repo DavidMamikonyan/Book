@@ -1,5 +1,16 @@
 .main-container {
     max-width: 670px;
+    width: 100%;
+    margin-right: auto;
+}
+
+.title {
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(25, 3, 43, 1);
+    padding: 0 47px 28px 0;
+    display: block;
 }
 
 .pledged-container {
@@ -48,6 +59,7 @@
 .main-container > .pledged-container:last-child {
     border: none;
 }
+
 .total-container {
     border-top: 1px solid rgba(100, 100, 100, 1);
     display: grid;
@@ -58,6 +70,7 @@
     padding: 12px 47px 12px 0;
     grid-gap: 10px;
 }
+
 .total {
     font-family: PoppinsRegular, sans-serif;
     font-size: 18px;

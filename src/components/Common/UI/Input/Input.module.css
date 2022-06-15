@@ -25,6 +25,8 @@
 .input-container {
     position: relative;
     background-color: rgba(255, 251, 246, 1);
+    border-radius: 6px;
+
 }
 
 .input-container > input {

@@ -2,13 +2,16 @@ import React, {useEffect, useState} from 'react'
 import ReactPaginate from "react-paginate";
 import BookList from '../bookList';
 import styles from './paginate.module.css'
+import {useTranslation} from "react-i18next";
 
-function PaginatedItems({data, itemsPerPage, text, type, filterData}) {
+function PaginatedItems({data, itemsPerPage,  type, filterData}) {
 
 
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
+    const {t} = useTranslation();
+
 
 
     useEffect(() => {
@@ -26,14 +29,14 @@ function PaginatedItems({data, itemsPerPage, text, type, filterData}) {
 
     return (
         <div className={styles['main-container']}>
-            <BookList text={text} data={currentItems} type={type} filterData={filterData}/>
+            <BookList  data={currentItems} type={type} filterData={filterData}/>
             <ReactPaginate
-                nextLabel="Next >>"
+                nextLabel={`${t('paginate.next')}>>`}
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={3}
                 marginPagesDisplayed={2}
                 pageCount={pageCount}
-                previousLabel="<< Back"
+                previousLabel={`<<${t('paginate.back')}`}
                 pageClassName={styles["page-item"]}
                 pageLinkClassName={styles["page-link"]}
                 previousClassName={styles["page-item"]}

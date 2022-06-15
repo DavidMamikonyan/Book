@@ -1,12 +1,11 @@
 import './style.filter.css';
 import Select, { components } from 'react-select'
 import dropIcon from '../../assets/images/icons/select-icon.svg';
-import { GlobalContext } from '../../context';
 
 
 
 const Filter = () => {
-    const { audioBook } = GlobalContext()
+    // const { audioBook } = GlobalContext()
 
     // const [filteredItemsByStatus, setFilteredItemsByStatus] = useState([])
 

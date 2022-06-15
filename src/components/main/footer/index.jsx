@@ -7,41 +7,45 @@ import fbFooter from '../../../assets/images/icons/fb-footer.svg';
 import instaFooter from '../../../assets/images/icons/instagram-footer.svg';
 import tweetFooter from '../../../assets/images/icons/tweeter-footer.svg';
 import './style.footer.css';
+import {useTranslation} from "react-i18next";
 
 
 const Footer = () => {
+
+    const {t, i18n} = useTranslation();
+    console.log(i18n);
     return (
         <div className='main-footer'>
             <footer>
                 <div className="first">
                     <div>
-                        <img src={mailIcon} alt="mail" />
-                        <a href="#">afjsinfo@gmail.com</a>
+                        <img src={mailIcon} alt="mail"/>
+                        <a href="#">{t('footer.email')}</a>
                     </div>
-                    <div>
-                        <img src={phoneIcon} alt="mail" />
+                    {i18n.language === "en" && <div>
+                        <img src={phoneIcon} alt="mail"/>
                         <a href="tel:+881289-400-3760">(+881)289-400-3760</a>
-                    </div>
+                    </div>}
                 </div>
                 <div className="middle">
-                    <a href="#"><img src={fbFooter} alt="fb" /></a>
-                    <a href="#" className='inst'><img src={instaFooter} alt="insta" /></a>
-                    <a href="#"><img src={tweetFooter} alt="tweet" /></a>
+                    <a href="#"><img src={fbFooter} alt="fb"/></a>
+                    <a href="#" className='inst'><img src={instaFooter} alt="insta"/></a>
+                    <a href="#"><img src={tweetFooter} alt="tweet"/></a>
                 </div>
                 <div className="last">
                     <div>
-                        <img src={locationIcon} alt="mail" />
-                        <p href="#">Lorem ipsum dolor sit amet, consectetur</p>
+                        <img src={locationIcon} alt="mail"/>
+                        <p href="#">{t('footer.location')}</p>
                     </div>
-                    <div>
-                        <img src={clockIcon} alt="mail" />
+                    {i18n.language === "en" && <div>
+                        <img src={clockIcon} alt="mail"/>
                         <p>10:00AM - 20:00PM</p>
-                    </div>
+                    </div>}
                 </div>
             </footer>
             <div className="foot-end">
-                <div className="line"></div>
-                <img className='foot-text' src={Ellipse} alt="foot-text" />
+                <div className="line"/>
+                <span className={'footer-info'}>{t('footer.info')}</span>
             </div>
         </div>
     )

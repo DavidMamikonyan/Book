@@ -1,19 +1,23 @@
 import React from "react";
 import styles from './SB_Library.module.css';
+import {useTranslation} from "react-i18next";
 
 export default ({item}) => {
+
+    const {t} = useTranslation();
+
     return (
         <div className={styles['container']}>
             <div>
-                <span>Narrator</span>
+                <span>{t('singleBook.narrator')}</span>
                 <span>{item.narrator}</span>
             </div>
             <div>
-                <span>Genre</span>
+                <span>{t('singleBook.genre')}</span>
                 <span>{item.genre}</span>
             </div>
             <div>
-                <span>Year of publication</span>
+                <span>{t('singleBook.publicYear')}</span>
                 <span>{item.publicYear}</span>
             </div>
         </div>

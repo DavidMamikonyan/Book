@@ -11,6 +11,17 @@
 /*    width: 100%;*/
 /*    cursor: pointer;*/
 /*}*/
+.text-button {
+    cursor: pointer;
+    color: rgba(88, 128, 75, 1);
+    font-family: PoppinsMedium, sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
 
 .primary {
     cursor: pointer;
@@ -27,7 +38,8 @@
     text-transform: uppercase;
 }
 
-.default-style {
+.default-style ,
+.cancel-button {
     padding: 14px;
     border: 1px solid rgba(50, 50, 50, 0.1);
     font-family: PoppinsMedium, sans-serif;
@@ -38,7 +50,14 @@
     text-align: center;
     color: #000000;
     background-color: #FFFFFF;
+}
 
+.cancel-button {
+    background-color: rgba(206, 206, 206, 1);
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
 
 }
 
@@ -54,8 +73,8 @@
     background-color: transparent;
     text-transform: capitalize;
     cursor: pointer;
-
 }
+
 .primary:disabled,
 .primary:disabled:hover,
 .primary:disabled:active {

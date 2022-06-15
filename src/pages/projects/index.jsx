@@ -12,7 +12,7 @@ const ProjectsPage = () => {
     return (
         <div className={styles["main-container"]}>
             <img src={projectTopImg} alt='project' className={styles['top-img']}/>
-            <PaginatedItems data={projectsBooksData} text={'Projects'} itemsPerPage={8} type='project' />
+            <PaginatedItems data={projectsBooksData} itemsPerPage={8} type='project' />
             {/*<Link to="/create-book" id={styles["start-project"]}>start your project</Link>*/}
         </div>
     )

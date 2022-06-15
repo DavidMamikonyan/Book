@@ -1,16 +1,16 @@
-.fund-main-component{
+.fund-main-component {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 60px;
 }
 
-.fund-img{
+.fund-img {
     width: 100px;
     height: 100px;
 }
 
-.fund-btn{
+.fund-btn {
     font-size: 18px;
     font-weight: bold;
     color: white;
@@ -19,6 +19,10 @@
     cursor: pointer;
 }
 
-.fund-btn:focus{
+.fund-btn:first-letter {
+    text-transform: uppercase;
+}
+
+.fund-btn:focus {
     outline: none;
 }

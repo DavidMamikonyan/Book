@@ -3,9 +3,11 @@ import styles from './filter.module.css';
 import filterIcon from './../../../assets/images/filterIcon.png';
 import Search from './../Search'
 import DropDown from './../DropDown'
+import {useTranslation} from "react-i18next";
 
 export default (props) => {
-    console.log(props);
+
+    const {t} = useTranslation();
 
     return (
         <div className={styles['filter-main-container']}>
@@ -13,8 +15,9 @@ export default (props) => {
                 <div>
                     <div className={styles['filter-by']}>
                         <img src={filterIcon} alt='filter icon'/>
-                        <span>Filter by</span>
+                        <span>{t('filter.filter')}</span>
                     </div>
+
                     <Search/>
                 </div>
                 {props.dd_data.map((item, index) =>
@@ -22,7 +25,7 @@ export default (props) => {
                         className={styles['status-container']}
                         key={index}
                     >
-                        <span>{item.title}</span>
+                        <span>{t(`filter.${item.id}`)}</span>
                         <DropDown data={{
                             placeholder: item.placeholder,
                             dropMenuItems: item.dd_menu_items,

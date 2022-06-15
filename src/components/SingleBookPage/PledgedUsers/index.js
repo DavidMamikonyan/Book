@@ -1,14 +1,17 @@
 import React from "react";
 import styles from './pledged.module.css';
+import {useTranslation} from "react-i18next";
 
 
 export default (props) => {
 
+    const {t, i18n} = useTranslation()
     const total = props.data.length;
     let totalSum = 0;
 
     return (
         <div className={styles['main-container']}>
+            <span className={styles['title']}>{t('pledgedUser.title')}</span>
             {props.data.map((item, index) => {
                 totalSum += item.pledgedSize;
 
@@ -25,9 +28,9 @@ export default (props) => {
                 </div>
             })}
             <div className={styles['total-container']}>
-                <span className={styles['total']}>Total:
-                    <span className={styles['pledged-size']}> {total} users</span>
-                </span>
+                <div className={styles['total']} >{t('pledgedUser.total')}:
+                    <span className={styles['pledged-size']}> {total} {t('pledgedUser.users')}</span>
+                </div>
                 <span className={styles['pledged-size']}>${totalSum}</span>
             </div>
 
